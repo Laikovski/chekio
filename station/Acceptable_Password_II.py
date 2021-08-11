@@ -12,7 +12,7 @@ Output: A bool.
 """
 import re
 def is_acceptable_password(password: str) -> bool:
-    if len(password) > 6 and any(map(str.isdigit, password)):
+    if len(password) > 6 and any(map(str.isdigit, password)) and any(letter.isalpha() for letter in password):
         return True
     return False
 
@@ -20,3 +20,4 @@ def is_acceptable_password(password: str) -> bool:
 if __name__ == '__main__':
     print("Example:")
     print(is_acceptable_password('dddsdd'))
+    print(is_acceptable_password("1234567h"))
